@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/message.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/container.min.css">
+    <title>App Vue Js</title>
+    <style>
+        .main.container{
+            padding-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="ui inverted fixed menu">
+    <div class="hedear item">Tutoriel</div>
+</div>
+
+<div class="ui main container" id="app">
+
+    <input type="checkbox" v-model="cls" :true-value="'success'" :false-value="'error'">
+
+    <div class="ui message" :class="cls">
+
+        <i class="close icon" @click="close"></i>
+        <p> {{ message }}</p>
+
+    </div>
+
+
+    <a v-bind:href="link + '/contacts.htm'">{{message}}</a>
+    <ul>
+        <li v-for="person in persons">
+            {{person}}
+        </li>
+    </ul>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+<script src="../js/app.js"></script>
+
+</body>
+</html>
