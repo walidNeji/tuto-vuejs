@@ -1,16 +1,15 @@
-new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello walid !',
-        link :" https://www.adservio.fr",
-        cls: 'success',
-        persons: ['walid','rania','yann','maher','manel'],
-    },
-    methods:{
-        close: function () {
-            this.message= "Fermé ",
-            this.success = false
-
-        }
+let vm = new Vue({
+  el : '#app',
+  data: {
+      seconds : 0
+  },
+  mounted: function () {
+    this.$interval = setInterval(() => {
+         console.log('TIME')
+         this.seconds++
+    }, 1000)
+  },
+    destroyed: function () {
+        clearInterval(this.$interval)
     }
 })
