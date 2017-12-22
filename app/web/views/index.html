@@ -24,7 +24,11 @@
 </div>
 
 <div class="ui main container" id="app">
-   <label class="ui main label"> {{ seconds }}</label>
+    <p>
+        Prénom : {{ firstName }}<br>
+        Nom : {{ lastName }}<br>
+        Nom complet : <input type="text" v-model="fullname">
+    </p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
