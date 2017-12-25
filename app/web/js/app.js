@@ -1,29 +1,31 @@
+let salut = function (el, binding) {
+
+    el.value = binding.value;
+
+    console.log('bind', binding)
+
+};
+
+
 let vm = new Vue({
     el: '#app',
+    directives: {
+        salut
+    },
     data: {
-        firstName: 'Walid',
-        lastName: 'NEJI',
-        fullname: ''
+        message: 'Walid',
     },
-    watch :{
-        fullname: function (value) {
-            console.log('watch',value)
+    methods: {
+
+        demo: function () {
+            console.log('Salut')
+        },
+
+        demo2: function () {
+
+            console.log('demo 2 ')
         }
-    },
-    // computed: {
-    //     fullname: {
-    //         get: function () {
-    //             return this.firstName + ' ' + this.lastName
-    //         },
-    //         set: function (value) {
-    //             console.log(value)
-    //             let parts = value.split(' ')
-    //             this.firstName = parts [0],
-    //             this.lastName = parts [1]
-    //         }
-    //
-    //     }
-    // },
+    }
 
 
-})
+});
